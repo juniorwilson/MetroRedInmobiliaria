@@ -11,7 +11,7 @@
 <body>
 <form action="/formulario" method="POST">
     {{ csrf_field() }}
-dqwdqwd
+
 <div class="container">
     <p>formulario 1 </p>
     <div class="form-group">
