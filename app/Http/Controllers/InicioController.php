@@ -13,7 +13,6 @@ class InicioController extends Controller
     {
         return view('inicio.index');
     }
-    asdasd
     public function ViewPdf()
     {
         $pdf = PDF::loadView('PDF.FormularioRenta');
