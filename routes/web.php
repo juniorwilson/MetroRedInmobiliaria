@@ -1,7 +1,6 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +12,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
 
-    return redirect("formulario/create");
+Route::get('/', function () {
+    return view("login");
 });
 
-Route::resource('formulario', FormularioVentaController::class);
+Route::post('validar', 'LoginController@validar');
+
+Route::group(['middleware' => 'auth'], function () {
+    route::resource('inicio','InicioController');
+    Route::get('Visualizar/generar/pdf', 'InicioController@ViewPdf')->middleware('auth');
+    Route::get('Descargar/generar/pdf', 'InicioController@DownloadPdf')->middleware('auth');
+    Route::get('Generar/Excel', 'InicioController@ExportExcel')->middleware('auth');
+    Route::resource('Formulario-Venta', 'FormularioVentaController')->middleware('auth');
+    Route::resource('Formulario-Renta', 'FormularioRentaController')->middleware('auth');
+    
+});
+Route::get('/logout', function () {
+    Auth::logout();
+    return redirect('/');
+});
+
 

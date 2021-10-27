@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\FormularioVenta;
 use Illuminate\Http\Request;
 
-class FormularioVentaController extends Controller
+class FormularioRentaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class FormularioVentaController extends Controller
      */
     public function index()
     {
-        return view("FormularioEncuestaVenta.index");
+        return view("FormularioEncuestaRenta.index");
     }
 
     /**
@@ -24,7 +23,7 @@ class FormularioVentaController extends Controller
      */
     public function create()
     {
-       
+        //
     }
 
     /**
@@ -35,20 +34,16 @@ class FormularioVentaController extends Controller
      */
     public function store(Request $request)
     {
-        /*
-       $formulario = new FormularioVenta();
-       $formulario->save();
-       */
-      return 1;
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\FormularioVenta  $formularioVenta
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(FormularioVenta $formularioVenta)
+    public function show($id)
     {
         //
     }
@@ -56,10 +51,10 @@ class FormularioVentaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\FormularioVenta  $formularioVenta
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(FormularioVenta $formularioVenta)
+    public function edit($id)
     {
         //
     }
@@ -68,10 +63,10 @@ class FormularioVentaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\FormularioVenta  $formularioVenta
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, FormularioVenta $formularioVenta)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -79,10 +74,10 @@ class FormularioVentaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\FormularioVenta  $formularioVenta
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(FormularioVenta $formularioVenta)
+    public function destroy($id)
     {
         //
     }
