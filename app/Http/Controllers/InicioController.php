@@ -3,28 +3,50 @@
 namespace App\Http\Controllers;
 
 use App\Exports\DatosExport;
+use App\Exports\UsersExport2;
+use App\FormularioRenta;
+use App\FormularioVenta;
 use Barryvdh\DomPDF\Facade as PDF;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class InicioController extends Controller
 {
     public function index()
     {
         return view('inicio.index');
     }
-    public function ViewPdf()
+    public function ViewPdfRenta()
     {
-        $pdf = PDF::loadView('PDF.FormularioRenta');
+        $FormularioRenta = FormularioRenta::all();
+        $pdf = PDF::loadView('PDF.FormularioRenta',compact('FormularioRenta'));
         return $pdf->stream();
     }
-    public function DownloadPdf()
+    public function DownloadPdfRenta()
     {
-        $pdf = PDF::loadView('PDF.FormularioRenta');
-        return $pdf->download('exportacion de datos.pdf');
+        $FormularioRenta = FormularioRenta::all();
+        $pdf = PDF::loadView('PDF.FormularioRenta',compact('FormularioRenta'));
+        return $pdf->download('Informe Encuesta Renta.pdf');
     }
-    public function ExportExcel()
+    public function ExportExcelRenta()
     {
-        return Excel::download(new DatosExport, 'users.xlsx');
+        return Excel::download(new DatosExport, 'Informe Encuesta Renta.xlsx');
+    }
+
+    public function ViewPdfVenta()
+    {
+        $FormularioRenta = FormularioVenta::all();
+        $pdf = PDF::loadView('PDF.FormularioVenta',compact('FormularioRenta'));
+        return $pdf->stream();
+    }
+    public function DownloadPdfVenta()
+    {
+        $FormularioRenta = FormularioVenta::all();
+        $pdf = PDF::loadView('PDF.FormularioVenta',compact('FormularioRenta'));
+        return $pdf->download('Informe Encuesta Venta.pdf');
+    }
+    public function ExportExcelVenta()
+    {
+        return Excel::download(new UsersExport2, 'Informe Encuesta Venta.xlsx');
     }
 }

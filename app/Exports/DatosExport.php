@@ -20,7 +20,7 @@ class DatosExport implements FromCollection
     }
     public function collection()
     {
-        $users = DB::table('usuarios')->select('id','name', 'email')->get();
+        $users = DB::table('formulario_encuesta_encuesta')->select('id','DirrecionInmueble', 'IDInmueble','ServicioPrestado','OpcionCompra','UbicacionInmueble','EstadoGeneral','AcuerdoValordeVenta','OfertaInmueble','ReferidoNombre','ReferidoTelefono','ReferidoNombre2','ReferidoTelefono2','NombreCliente','CedulaCliente','TelefonoCliente','MailCliente','NombrePropietario','CedulaPropietario','TelefonoPropietario','MailPropietario','created_at')->get();
         return $users;
     }
 }

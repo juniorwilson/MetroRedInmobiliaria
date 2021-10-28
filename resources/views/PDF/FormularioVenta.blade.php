@@ -13,7 +13,7 @@
     $html = null;
     foreach ($FormularioRenta as $key => $info) {
     $html.='<h2 style="text-align: center">FORMATO PDF</h2>
-    <h2 style="text-align: center">ENCUESTA DE RENTA</h2>
+    <h2 style="text-align: center">ENCUESTA DE VENTA</h2>
     <br>
     <table style="width: 100%">
         <thead>
@@ -29,8 +29,9 @@
             </tr>
         </tbody>
     </table><br>
-    <h3 style="text-align: center">OBJETIVO:verificar el grado de satisfaccion del cliente que solicite un inmueble para
-        la Renta ofrecido por METRO RED INMOBILIARIA.</h3>
+    <h3 style="text-align: center">OBJETIVO:verificar el grado de satisfaccion del cliente que solicite un inmueble
+        para
+        la Venta ofrecido por METRO RED INMOBILIARIA.</h3>
     <br>
     <table style="width: 100%">
         <thead>
@@ -65,7 +66,7 @@
     <table style="width: 100%">
         <thead>
             <tr>
-                <th>¿como le parece la ubicacion del inmueble</th>
+                <th>¿como le parece la ubicacion del inmueble?</th>
                 <th>¿Desea realizar alguna oferta sobre este inmueble?</th>
             </tr>
         </thead>
@@ -90,7 +91,7 @@
         <tbody>';
             $html.= '<tr>' ;
                 $html.= "<td class='td' style='text-align: center;'>" . $info->ReferidoNombre . '</td>' ;
-                $html.= "<td class='td' style='text-align: center;'>" . $info->ReferidoTelefono . '</td>' ;
+                $html.= "<td class='td' style='text-align: center;'>" . $info->ReferidoTelefono. '</td>' ;
                 $html.= "<td class='td' style='text-align: center;'>" . $info->ReferidoNombre2 . '</td>' ;
                 $html.= "<td class='td' style='text-align: center;'>" . $info->ReferidoTelefono2 . '</td>' ;
                 $html.= '</tr>' ;

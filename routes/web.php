@@ -21,9 +21,14 @@ Route::post('validar', 'LoginController@validar');
 
 Route::group(['middleware' => 'auth'], function () {
     route::resource('inicio','InicioController');
-    Route::get('Visualizar/generar/pdf', 'InicioController@ViewPdf')->middleware('auth');
-    Route::get('Descargar/generar/pdf', 'InicioController@DownloadPdf')->middleware('auth');
-    Route::get('Generar/Excel', 'InicioController@ExportExcel')->middleware('auth');
+    Route::get('Visualizar/generar/Venta/pdf', 'InicioController@ViewPdfVenta')->middleware('auth');
+    Route::get('Descargar/generar/Venta/pdf', 'InicioController@DownloadPdfVenta')->middleware('auth');
+    Route::get('Generar/Venta/Excel', 'InicioController@ExportExcelVenta')->middleware('auth');
+
+    Route::get('Visualizar/generar/Renta/pdf', 'InicioController@ViewPdfRenta')->middleware('auth');
+    Route::get('Descargar/generar/Renta/pdf', 'InicioController@DownloadPdfRenta')->middleware('auth');
+    Route::get('Generar/Renta/Excel', 'InicioController@ExportExcelRenta')->middleware('auth');
+
     Route::resource('Formulario-Venta', 'FormularioVentaController')->middleware('auth');
     Route::resource('Formulario-Renta', 'FormularioRentaController')->middleware('auth');
     
