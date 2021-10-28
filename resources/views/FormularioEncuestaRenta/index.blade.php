@@ -55,194 +55,185 @@ cursor: pointer;"></strong>
 
     <hr style="color: red">
 
-    <form>
-        <div class="container">
-            <p>encuesta de venta</p>
+    <form action="/formulario" method="POST">
+        {{ csrf_field() }}
+        <div class="container border">
+            <h1 class="text-center">ENCUESTA DE RENTA</h1><br><br>
             <div class="form-row">
-                <div class="form-group col-md-6 ">
-                    <label for="inputEmail4">Direccion del inmueble</label>
-                    <input type="text" class="form-control " id="inputEmail4"
-                        placeholder="ingresa la direccion del inmueble" required>
-                    <br>
+                <div class="form-group col-md-6 shadow-none p-3 mb-5 bg-light rounded">
+                    <label for="inputEmail4">Direccion del inmueble.</label>
+                    <input type="text" class="form-control border-danger" id="inputEmail4"
+                        placeholder="ingresa la direccion del inmueble" required><br><br>
                 </div>
-                <div class="form-group col-md-6">
-
-                    <label for="inputEmail4">ID del inmueble</label>
-                    <input type="number" class="form-control" id="inputEmail4" placeholder="ingresa id del inmueble"
-                        required>
-                    <br>
-
+                <div class="form-group col-md-6 shadow-none p-3 mb-5 bg-light rounded">
+                    <label for="inputEmail4">ID del inmueble.</label>
+                    <input type="number" class="form-control border-danger" id="inputEmail4" placeholder="ingresa id del inmueble"
+                        required><br><br>
                 </div>
-
-                <H3>OBJETIVO:verificar el grado de satisfaccion del cliente que solicite un inmueble para la Venta
+                <h3 class="mb-3">OBJETIVO:verificar el grado de satisfaccion del cliente que solicite un inmueble para
+                    la Renta
                     ofrecido por
-                    METRO RED INMOBILIARIA.</H3><BR>
-                <div class="form-check col-md-12 text-center">
-                    <h5></h5><br>
-                </div>
-                <div class="form-check col-md-6 text-center">
-                    <h5>¿Como le parecio el servicio prestado por el agente de METRO RED INMOBILIARIA?</h5>
-                    <BR>
-                    <label>
+                    METRO RED INMOBILIARIA.<br><br></h3>
+                <div class="form-check col-md-6">
+                    <div class="text-center shadow p-3 mb-5 bg-white rounded">
+                    <h5 class="mb-3">¿Como le parecio el servicio prestado por el agente de METRO RED INMOBILIARIA?</h5>
+                    <label class="text-danger font-weight-bold">
                         <input type="radio" name="servicio" value="EXCELENTE" required> EXCELENTE
-                    </label>
-                    <label>
+                    </label>&nbsp;
+                    <label class="text-danger font-weight-bold">
                         <input type="radio" name="servicio" value="BUENO"> BUENO
-                    </label>
-                    <label>
+                    </label>&nbsp;
+                    <label class="text-danger font-weight-bold">
                         <input type="radio" name="servicio" value="REGULAR"> REGULAR
                     </label>
-                    <BR><BR>
+                    </div>
+                    <br><br>
                 </div>
 
                 <div class="form-check col-md-6 text-center ">
-                    <h5>¿Como le parecio el estado general y aseo del inmueble?</h5>
-                    <BR>
-                    <label>
+                    <div class="text-center shadow p-3 mb-5 bg-white rounded">
+                    <h5 class="mb-3">¿Como le parecio el estado general y aseo del inmueble?</h5>
+                    <label class="text-danger font-weight-bold">
                         <input type="radio" name="estado" value="EXCELENTE" required> EXCELENTE
-                    </label>
-                    <label>
+                    </label> &nbsp;
+                    <label class="text-danger font-weight-bold">
                         <input type="radio" name="estado" value="BUENO"> BUENO
-                    </label>
-                    <label>
+                    </label> &nbsp;
+                    <label class="text-danger font-weight-bold">
                         <input type="radio" name="estado" value="REGULAR"> REGULAR
                     </label>
-                    <BR><BR>
                 </div>
-
+                    <br><br>
+                </div>
                 <div class="form-check col-md-12 text-center">
-                    <h5></h5><br>
+                    <h5></h5>
                 </div>
                 <div class="form-check col-md-6 text-center">
-                    <h5>¿considera este inmueble como una opcion de compra?</h5>
-                    <BR>
-                    <label>
+                    <div class="text-center shadow p-3 mb-5 bg-white rounded">
+                    <h5 class="mb-3">¿considera este inmueble como una opcion de compra?</h5>
+                    <label class="text-danger font-weight-bold">
                         <input type="radio" name="compra" value="SI" required> SI
-                    </label>
-                    <label>
+                    </label>&nbsp;
+                    <label class="text-danger font-weight-bold">
                         <input type="radio" name="compra" value="NO"> NO
-                    </label>
-                    <label>
+                    </label>&nbsp;
+                    <label class="text-danger font-weight-bold">
                         <input type="radio" name="compra" value="TALVEZ"> TALVEZ
                     </label>
                 </div>
-
-                <div class="form-check col-md-6 text-center">
-
+                <br><br>
+                </div>
+                <div class="form-check col-md-6 text-center mb-3">
+                    <div class="text-center shadow p-3 mb-5 bg-white rounded">
                     <label for="inputEmail4">
-                        <h5>¿Esta usted de acuerdo con el valor de venta del inmueble?</h5>
+                        <h5 class="mb-3">¿Esta usted de acuerdo con el valor de venta del inmueble?</h5>
                     </label>
-                    <input type="text" class="form-control " id="valor" placeholder="ingrese la opinion del valor"
+                    <input type="text" class="form-control border-danger" id="valor" placeholder="ingrese la opinion del valor"
                         required>
-
-
                 </div>
-                <div class="form-check col-md-12 text-center">
-                    <h5></h5><br>
-                </div>
-
-                <div class="form-check col-md-6 text-center ">
-                    <h5>¿como le parece la ubicacion del inmueble?</h5>
-                    <BR>
-                    <label>
+                <br><br>
+            </div>
+                <div class="form-check col-md-6 text-center mb-3">
+                    <div class="text-center shadow p-3 mb-5 bg-white rounded">
+                    <h5 class="mb-3">¿como le parece la ubicacion del inmueble?</h5>
+                    <label class="text-danger font-weight-bold">
                         <input type="radio" name="ubicacion" value="EXCELENTE" required> EXCELENTE
-                    </label>
-                    <label>
+                    </label >&nbsp;
+                    <label  class="text-danger font-weight-bold">
                         <input type="radio" name="ubicacion" value="BUENO"> BUENO
-                    </label>
-                    <label>
+                    </label>&nbsp;
+                    <label class="text-danger font-weight-bold">
                         <input type="radio" name="ubicacion" value="REGULAR"> REGULAR
                     </label>
                 </div>
-
-                <div class="form-check col-md-6 text-center ">
-
+                <br><br>
+            </div>
+                <div class="form-check col-md-6 text-center mb-3">
+                    <div class="text-center shadow p-3 mb-5 bg-white rounded">
                     <label for="inputEmail4">
                         <h5>¿Desea realizar alguna oferta sobre este inmueble?</h5>
                     </label>
-                    <input type="text" class="form-control" id="oferta" placeholder="ingrese la opinion sobre la oferta"
+                    <input type="text" class="form-control  border-danger" id="oferta" placeholder="ingrese la opinion sobre la oferta"
                         required>
-
-
                 </div>
-
-                <div class="form-check col-md-12 text-center"><BR>
-                    <h5>¿Podria suministrar dos referidos?</h5><br>
+                <br><br>
+            </div>
+                <div class="form-check col-md-12 text-center mb-3">
+                    <h5>¿Podria suministrar dos referidos? <br></h5>
                 </div>
-
-                <div class="form-check col-md-6 text-center">
+                <div class="form-check col-md-6 text-center shadow-none p-3 mb-5 bg-light rounded">
                     <label for="input4">
                         <h5>Referido 1</h5>
                     </label>
-                    <input type="text" class="form-control" id="nombre1" placeholder="NOMBRE" required><BR>
-                    <input type="number" class="form-control" id="telefono" placeholder="TELEFONO" required>
+                    <input type="text" class="form-control mb-3 border-danger" id="nombre1" placeholder="Nombre" required>
+                    <input type="number" class="form-control mb-3 border-danger" id="telefono" placeholder="Telefono" required>
                 </div>
-                <div class="form-check col-md-6 text-center">
+                <div class="form-check col-md-6 text-center shadow-none p-3 mb-5 bg-light rounded">
                     <label for="input">
                         <h5>Referido 2</h5>
                     </label>
-                    <input type="text" class="form-control" id="nombre2" placeholder="NOMBRE" required><BR>
-                    <input type="number" class="form-control" id="telefono2" placeholder="TELEFONO" required>
+                    <input type="text" class="form-control mb-3 border-danger" id="nombre2" placeholder="Nombre" required>
+                    <input type="number" class="form-control mb-3 border-danger" id="telefono2" placeholder="Telefono" required>
                 </div>
                 <div class="form-check col-md-12 text-center">
-                    <BR>
-                    <h5>DATOS DEL CLIENTE Y PROPIETARIO</h5><br>
+                    <h5>DATOS DEL CLIENTE Y PROPIETARIO</h5>
+                    <br>
                 </div>
-                <div class="form-check col-md-6 text-center ">
+                <div class="form-check col-md-6 text-center mb-3">
+                    <div class="text-center shadow p-3 mb-5 bg-white rounded">
                     <label for="input">
                         <h5>CLIENTE:</h5>
                     </label>
-                    <input type="text" class="form-control" id="clienten" placeholder="NOMBRE" required><br>
-                    <input type="number" class="form-control" id="clientec" placeholder="CEDULA" required><br>
-                    <input type="number" class="form-control" id="clientet" placeholder="TELEFONO-CELULARrequired"><br>
-                    <input type="email" class="form-control" id="clientee" placeholder="E-MAIL" required><br>
-
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="clientef">
-                        <label class="custom-file-label" for="customFile">SUBIR FIRMA</label>
+                    <input type="text" class="form-control mb-3 border-danger" id="clienten" placeholder="Nombre" required>
+                    <div class="row">
+                    <div class="col">
+                        <input type="number" class="form-control mb-3 border-danger" id="clientec" placeholder="Cedula" required>
                     </div>
-
+                    <div class="col">
+                        <input type="number" class="form-control mb-3 border-danger" id="clientet" placeholder="Telefono-Celular"
+                        required>
+                    </div>
                 </div>
 
-                <div class="form-check col-md-6 text-center ">
+                    <input type="email" class="form-control mb-3 border-danger" id="clientee" placeholder="E-MAIL" required>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input border-danger" id="clientef">
+                        <label class="custom-file-label" for="customFile">SUBIR FIRMA</label>
+                    </div>
+                </div>    <br><br>
+            </div>
+
+                <div class="form-check col-md-6 text-center mb-3">
+                    <div class="text-center shadow p-3 mb-5 bg-white rounded">
                     <label for="input">
                         <h5>PROPIETARIO:</h5>
                     </label>
-                    <input type="text" class="form-control" id="propietarion" placeholder="NOMBRE" required><br>
-                    <input type="number" class="form-control" id="propietarioc" placeholder="CEDULA" required><br>
-                    <input type="number" class="form-control" id="propietariot" placeholder="TELEFONO-CELULAR"
-                        required><br>
-                    <input type="email" class="form-control" id="propietarioe" placeholder="E-MAIL" required><br>
+                    <input type="text" class="form-control mb-3 border-danger" id="propietarion" placeholder="Nombre" required>
 
+
+                    <div class="row">
+                        <div class="col">
+                            <input type="number" class="form-control mb-3 border-danger" id="propietarioc" placeholder="Cedula" required>
+                        </div>
+                        <div class="col">
+                            <input type="number" class="form-control mb-3 border-danger" id="propietariot" placeholder="Telefono-Celular"
+                            required>
+                        </div>
+                    <input type="email" class="form-control mb-3 border-danger" id="propietarioe" placeholder="E-MAIL" required>
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" id="propietariof">
                         <label class="custom-file-label" for="customFile">SUBIR FIRMA</label>
                     </div>
-
                 </div>
-
-
-
 
             </div>
 
+            </div>
         </div>
-
+        <div class="text-center">
+            <input type="submit" type="button" value="Enviar"
+                style="border-radius: 8px; background-color: #cf1313;border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;margin: 4px 2px;font-size: 20px;cursor: pointer;"></strong>
         </div>
-        <div class="text-center"><BR>
-            <input type="submit" type="button" value="Enviar" style="border-radius: 8px; background-color: #cf1313;
-border: none;
-color: white;
-padding: 15px 32px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 16px;
-margin: 4px 2px;
-font-size: 20px;
-cursor: pointer;"></strong>
-        </div>
-        <hr style="color: red">
     </form>
 
 
