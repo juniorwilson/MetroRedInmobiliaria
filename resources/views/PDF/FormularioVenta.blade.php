@@ -12,9 +12,8 @@
     @php
     $html = null;
     foreach ($FormularioRenta as $key => $info) {
-    $html.='<h2 style="text-align: center">FORMATO PDF</h2>
-    <h2 style="text-align: center">ENCUESTA DE VENTA</h2>
-    <br>
+    $html.='<h3 style="text-align: center">FORMATO PDF</h2>
+    <h3 style="text-align: center">ENCUESTA DE VENTA</h2>
     <table style="width: 100%">
         <thead>
             <tr>
@@ -29,10 +28,9 @@
             </tr>
         </tbody>
     </table><br>
-    <h3 style="text-align: center">OBJETIVO:verificar el grado de satisfaccion del cliente que solicite un inmueble
+    <h4 style="text-align: center">OBJETIVO:verificar el grado de satisfaccion del cliente que solicite un inmueble
         para
         la Venta ofrecido por METRO RED INMOBILIARIA.</h3>
-    <br>
     <table style="width: 100%">
         <thead>
             <tr>
@@ -47,7 +45,6 @@
             </tr>
         </tbody>
     </table>
-    <br>
     <table style="width: 100%">
         <thead>
             <tr>
@@ -62,7 +59,6 @@
             </tr>
         </tbody>
     </table>
-    <br>
     <table style="width: 100%">
         <thead>
             <tr>
@@ -76,9 +72,8 @@
                 <td>'.$info->OfertaInmueble.'</td>
             </tr>
         </tbody>
-    </table><br>
+    </table>
     <h3 style="text-align: center">¿Podria suministrar dos referidos?</h3>
-    <br>
     <table style="width: 100%">
         <thead>
             <tr>
@@ -97,9 +92,9 @@
                 $html.= '</tr>' ;
             $html.= '</tbody>
     </table>';
-    $html.= '<br>
+    $html.= '
     <h3 style="text-align: center">DATOS DEL CLIENTE Y PROPIETARIO</h3>
-    <h3 style="text-align: center">CLIENTE</h3>
+    <h4 style="text-align: center">CLIENTE</h3>
     <table style="width: 100%">
         <thead>
             <tr>
@@ -118,7 +113,20 @@
             </tr>
         </tbody>
     </table>
-    <br>
+    <table style="width: 100%">
+    <thead>
+<tr>
+    <th>Firma Cliente</th>
+    <th>Firma Propietario</th>
+</tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><a href='.$info->FirmaCliente.' target="_blanck">Firma CLiente</a></td>
+            <td><a href='.$info->FirmaPropietario.' target="_blanck">Firma Propietario</a></td>
+        </tr>
+    </tbody>
+</table>
     <h3 style="text-align: center">PROPIETARIO</h3>
     <table style="width: 100%">
         <thead>
